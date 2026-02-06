@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Control - Reforestation Project</title>
+    <link rel="stylesheet" href="homestyle.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="top-bar">
+            <span class="status-dot"></span>
+            <span class="status-text">System Online</span>
+        </div>
+
+        <div class="content">
+            <div class="logo-section">
+                <div class="logo">DR</div>
+                <h1>Drone Reforestation</h1>
+                <p class="tagline">Multi-Agent Control System v2.3</p>
+            </div>
+
+            <div class="control-panel">
+                <div class="panel-header">
+                    <h2>Mission Parameters</h2>
+                    <span class="header-line"></span>
+                </div>
+
+                <form method="POST" action="/run">
+                    <div class="input-wrapper">
+                        <label for="grid_size">Grid Size (km²)</label>
+                        <div class="input-container">
+                            <input 
+                                type="number" 
+                                id="grid_size" 
+                                name="grid_size" 
+                                placeholder="e.g., 100"
+                                min="1"
+                                required>
+                            <span class="unit">km²</span>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="num_drones">Active Drones</label>
+                        <div class="input-container">
+                            <input 
+                                type="number" 
+                                id="num_drones" 
+                                name="num_drones" 
+                                placeholder="e.g., 5"
+                                min="1"
+                                max="50"
+                                required>
+                            <span class="unit">units</span>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn primary">
+                            Start Training
+                        </button>
+                        <button type="button" class="btn secondary" onclick="location.href='/analyze'">
+                            View Analytics
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="info-bar">
+                <div class="info-item">
+                    <span class="info-label">Success Rate</span>
+                    <span class="info-value">94.2%</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Trees Planted</span>
+                    <span class="info-value">12,847</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Area Covered</span>
+                    <span class="info-value">342 km²</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 Reforestation Initiative | Built with ❤️ for the planet</p>
+        </footer>
+    </div>
+</body>
+</html>
